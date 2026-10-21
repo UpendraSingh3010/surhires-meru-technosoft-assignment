@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "inverse" | "ghost";
+type Variant = "primary" | "secondary" | "inverse";
 type Size = "md" | "lg";
 
 const base =
@@ -17,8 +17,6 @@ const variants: Record<Variant, string> = {
   // For use on navy backgrounds.
   inverse:
     "border border-white/40 text-white hover:border-white hover:bg-navy-700 active:bg-navy-900 focus-visible:outline-white",
-  ghost:
-    "text-teal-700 underline-offset-4 hover:underline active:text-navy-900 focus-visible:outline-teal-700",
 };
 
 const sizes: Record<Size, string> = {

@@ -1,6 +1,7 @@
 import { Building2, CalendarDays, IndianRupee, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
+import { cardClasses } from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
 import { formatDate } from "@/lib/format";
 import type { Job } from "@/lib/types";
@@ -16,7 +17,9 @@ export function JobCard({ job }: JobCardProps) {
   )}`;
 
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-card transition-shadow duration-200 hover:shadow-lift">
+    <article
+      className={cn(cardClasses, "flex h-full flex-col p-6 transition-shadow duration-200 hover:shadow-lift")}
+    >
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-h3 font-bold">{job.title}</h3>
         <Badge tone="teal" className="shrink-0">

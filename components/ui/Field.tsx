@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
 type FieldProps = {
   id: string;
@@ -6,6 +7,7 @@ type FieldProps = {
   hint?: string;
   error?: string;
   required?: boolean;
+  className?: string;
   children: ReactNode;
 };
 
@@ -19,9 +21,9 @@ export function describedBy(id: string, hint?: string, error?: string) {
  * Label, optional hint and inline error around a form control.
  * The control itself is passed as children and must use the same `id`.
  */
-export function Field({ id, label, hint, error, required, children }: FieldProps) {
+export function Field({ id, label, hint, error, required, className, children }: FieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className={cn("flex flex-col gap-1.5", className)}>
       <label htmlFor={id} className="text-small font-semibold text-navy-900">
         {label}
         {required && (

@@ -2,13 +2,12 @@ import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import { Container } from "./Container";
 
-type Tone = "default" | "tinted" | "white" | "navy";
+type Tone = "default" | "tinted" | "white";
 
 const tones: Record<Tone, string> = {
   default: "bg-warm-white",
   tinted: "bg-teal-50",
   white: "bg-white",
-  navy: "bg-navy-900 text-white",
 };
 
 type SectionProps = ComponentProps<"section"> & {

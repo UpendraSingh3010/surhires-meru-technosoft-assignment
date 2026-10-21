@@ -3,6 +3,7 @@
 import { CircleCheck, LoaderCircle } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
+import { cardClasses } from "@/components/ui/Card";
 import { describedBy, Field } from "@/components/ui/Field";
 import { Input, Textarea } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
@@ -154,7 +155,7 @@ export function PostJobForm() {
       noValidate
       onSubmit={handleSubmit}
       aria-label="Post a job"
-      className="rounded-2xl border border-border bg-white p-6 shadow-card md:p-8"
+      className={`${cardClasses} p-6 md:p-8`}
     >
       <div className="grid gap-6 md:grid-cols-2">
         <Field id="companyName" label="Company name" error={errors.companyName} required>

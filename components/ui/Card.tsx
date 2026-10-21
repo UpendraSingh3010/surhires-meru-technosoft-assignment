@@ -1,11 +1,6 @@
-import type { ComponentProps } from "react";
-import { cn } from "@/lib/cn";
-
-export function Card({ className, ...props }: ComponentProps<"div">) {
-  return (
-    <div
-      className={cn("rounded-2xl border border-border bg-white p-6 shadow-card", className)}
-      {...props}
-    />
-  );
-}
+/**
+ * The shared card surface. It is a class string rather than a component
+ * because cards render as different semantic elements (article, figure,
+ * li, form), and a string keeps each call site's HTML explicit.
+ */
+export const cardClasses = "rounded-2xl border border-border bg-white shadow-card";

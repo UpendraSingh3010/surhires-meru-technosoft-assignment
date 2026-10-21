@@ -1,5 +1,7 @@
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { cardClasses } from "@/components/ui/Card";
+import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import type { JobType } from "@/lib/types";
@@ -28,12 +30,9 @@ export function JobFilters({ filters, locations, types, onChange, onClear }: Job
       aria-label="Filter jobs"
       // Results update as you type, so submitting (e.g. pressing Enter) should do nothing.
       onSubmit={(event) => event.preventDefault()}
-      className="grid gap-4 rounded-2xl border border-border bg-white p-4 shadow-card sm:grid-cols-2 sm:p-5 lg:grid-cols-[2fr_1fr_1fr_auto] lg:items-end"
+      className={`${cardClasses} grid gap-4 p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-[2fr_1fr_1fr_auto] lg:items-end`}
     >
-      <div className="flex flex-col gap-1.5 sm:col-span-2 lg:col-span-1">
-        <label htmlFor="job-query" className="text-small font-semibold text-navy-900">
-          Role or keyword
-        </label>
+      <Field id="job-query" label="Role or keyword" className="sm:col-span-2 lg:col-span-1">
         <div className="relative">
           <Search
             aria-hidden="true"
@@ -48,12 +47,9 @@ export function JobFilters({ filters, locations, types, onChange, onClear }: Job
             className="pl-10"
           />
         </div>
-      </div>
+      </Field>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="job-location" className="text-small font-semibold text-navy-900">
-          Location
-        </label>
+      <Field id="job-location" label="Location">
         <Select
           id="job-location"
           value={filters.location}
@@ -66,12 +62,9 @@ export function JobFilters({ filters, locations, types, onChange, onClear }: Job
             </option>
           ))}
         </Select>
-      </div>
+      </Field>
 
-      <div className="flex flex-col gap-1.5">
-        <label htmlFor="job-type" className="text-small font-semibold text-navy-900">
-          Job type
-        </label>
+      <Field id="job-type" label="Job type">
         <Select
           id="job-type"
           value={filters.type}
@@ -84,7 +77,7 @@ export function JobFilters({ filters, locations, types, onChange, onClear }: Job
             </option>
           ))}
         </Select>
-      </div>
+      </Field>
 
       <Button
         variant="secondary"

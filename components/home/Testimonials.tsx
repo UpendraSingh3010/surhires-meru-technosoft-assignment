@@ -1,5 +1,6 @@
 import { Quote } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
+import { cardClasses } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { testimonials } from "@/lib/data/testimonials";
 
@@ -21,7 +22,7 @@ export function Testimonials() {
       <ul className="grid gap-6 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
           <li key={testimonial.name}>
-            <figure className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-card md:p-8">
+            <figure className={`${cardClasses} flex h-full flex-col p-6 md:p-8`}>
               <div className="flex items-center justify-between">
                 <Quote aria-hidden="true" className="size-8 text-teal-500" />
                 <Badge tone={testimonial.audience === "Employer" ? "teal" : "neutral"}>
