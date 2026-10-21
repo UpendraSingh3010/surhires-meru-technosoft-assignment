@@ -7,6 +7,9 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { employerHighlights } from "@/lib/data/plans";
 import { pageMetadata } from "@/lib/site";
+// Unsplash photo (ID 1521737604893-d14cc237f11d) stored locally; the static
+// import gives next/image its width, height and blur placeholder.
+import hiringTeamPhoto from "@/public/images/hiring-team.jpg";
 
 export const metadata = pageMetadata({
   title: "Hire faster: plans and job posting for employers",
@@ -49,10 +52,9 @@ export default function EmployersPage() {
             </div>
           </div>
           <Image
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+            src={hiringTeamPhoto}
             alt="A small hiring team working on laptops around a shared table in a bright office"
-            width={1200}
-            height={800}
+            placeholder="blur"
             sizes="(min-width: 1280px) 600px, (min-width: 1024px) 45vw, 100vw"
             preload
             className="aspect-3/2 w-full rounded-3xl object-cover shadow-lift"

@@ -3,16 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
-  images: {
-    // Only allow Unsplash photos requested at our fixed 1600px source size.
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/photo-*",
-        search: "?auto=format&fit=crop&w=1600&q=80",
-      },
-    ],
+  experimental: {
+    // Tailwind's CSS is small, so inlining it removes a render-blocking request.
+    inlineCss: true,
   },
   turbopack: {
     rules: {
