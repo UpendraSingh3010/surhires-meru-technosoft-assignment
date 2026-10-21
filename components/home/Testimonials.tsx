@@ -22,7 +22,12 @@ export function Testimonials() {
         {testimonials.map((testimonial) => (
           <li key={testimonial.name}>
             <figure className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-card md:p-8">
-              <Quote aria-hidden="true" className="size-8 text-teal-500" />
+              <div className="flex items-center justify-between">
+                <Quote aria-hidden="true" className="size-8 text-teal-500" />
+                <Badge tone={testimonial.audience === "Employer" ? "teal" : "neutral"}>
+                  {testimonial.audience}
+                </Badge>
+              </div>
               <blockquote className="mt-4 flex-1 text-body-lg text-ink">
                 <p>“{testimonial.quote}”</p>
               </blockquote>
@@ -33,15 +38,12 @@ export function Testimonials() {
                 >
                   {initials(testimonial.name)}
                 </span>
-                <div className="min-w-0 flex-1">
+                <div>
                   <p className="font-semibold text-navy-900">{testimonial.name}</p>
                   <p className="text-small text-muted">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
-                <Badge tone={testimonial.audience === "Employer" ? "teal" : "neutral"}>
-                  {testimonial.audience}
-                </Badge>
               </figcaption>
             </figure>
           </li>

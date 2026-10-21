@@ -21,11 +21,11 @@ export function LogoStrip() {
         >
           Trusted by hiring teams at
         </h2>
-        <ul className="mt-8 grid grid-cols-2 items-center gap-x-8 gap-y-6 text-center sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-between">
           {trustedCompanies.map((company, index) => (
             <li
               key={company}
-              className={`text-muted ${wordmarkStyles[index % wordmarkStyles.length]}`}
+              className={`whitespace-nowrap text-muted ${wordmarkStyles[index % wordmarkStyles.length]}`}
             >
               {company}
             </li>
