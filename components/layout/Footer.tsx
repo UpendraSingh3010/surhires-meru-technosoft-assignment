@@ -25,8 +25,8 @@ export async function Footer() {
   return (
     <footer className="bg-navy-900 text-navy-100">
       <Container className="py-14 md:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Logo tone="light" />
             <p className="mt-4 max-w-sm">
               Surhires connects growing Indian companies with people ready for their next role.
