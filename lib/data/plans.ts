@@ -1,5 +1,11 @@
 import type { Plan } from "@/lib/types";
 
+export const employerHighlights: string[] = [
+  "Ranked shortlists within 48 hours",
+  "Verified candidates in 120+ cities",
+  "No placement fees, cancel any time",
+];
+
 export const plans: Plan[] = [
   {
     name: "Starter",
