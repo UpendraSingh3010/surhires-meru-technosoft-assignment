@@ -10,7 +10,7 @@ export function HowItWorks() {
       title="From first post to signed offer in three steps"
       intro="The same simple flow works whether you are hiring your first engineer or looking for your next role."
     >
-      <ol className="grid gap-6 md:grid-cols-3">
+      <ol className="mx-auto grid max-w-xl gap-6 lg:max-w-none lg:grid-cols-3">
         {howItWorksSteps.map(({ title, description, Icon }, index) => (
           <li
             key={title}
