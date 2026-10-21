@@ -6,6 +6,14 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { employerHighlights } from "@/lib/data/plans";
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  title: "Hire faster: plans and job posting for employers",
+  description:
+    "Post a job on Surhires and get a ranked shortlist of matched candidates within 48 hours. Plans from ₹2,999 a month with no placement fees.",
+  path: "/employers",
+});
 
 export default function EmployersPage() {
   return (

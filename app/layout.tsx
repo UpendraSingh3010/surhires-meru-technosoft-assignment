@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -16,9 +17,33 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const defaultTitle = "Surhires – Hire faster, find work that pays fairly";
+
 export const metadata: Metadata = {
-  title: "Surhires",
-  description: "Hiring platform for employers and job seekers in India.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "en_IN",
+    url: "/",
+    title: defaultTitle,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b1f3a",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

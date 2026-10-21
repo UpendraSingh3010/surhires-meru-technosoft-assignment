@@ -1,6 +1,14 @@
 import { JobBoard } from "@/components/jobs/JobBoard";
 import { Container } from "@/components/ui/Container";
 import { jobLocations, jobs, jobTypes } from "@/lib/data/jobs";
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  title: "Find jobs with real salaries",
+  description:
+    "Browse open roles in Bengaluru, Pune, Delhi NCR, Jaipur and remote across India. Every listing shows a salary range. Filter by keyword, city and job type.",
+  path: "/jobs",
+});
 
 export default function JobsPage() {
   return (
