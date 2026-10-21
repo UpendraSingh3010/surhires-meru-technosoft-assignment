@@ -30,7 +30,7 @@ export function Navbar() {
                       "inline-flex min-h-11 items-center rounded-lg px-3 text-small font-medium transition-colors",
                       isActive
                         ? "text-teal-700 underline decoration-2 underline-offset-8"
-                        : "text-ink hover:bg-teal-50 hover:text-navy-900",
+                        : "text-ink hover:bg-teal-50 hover:text-navy-900 active:bg-border",
                     )}
                   >
                     {link.label}
