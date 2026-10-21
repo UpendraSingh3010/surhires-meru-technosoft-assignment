@@ -1,8 +1,10 @@
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { PostJobForm } from "@/components/employers/PostJobForm";
 import { PricingTable } from "@/components/employers/PricingTable";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 import { employerHighlights } from "@/lib/data/plans";
 
 export default function EmployersPage() {
@@ -51,6 +53,18 @@ export default function EmployersPage() {
       </section>
 
       <PricingTable />
+
+      <Section
+        id="post-a-job"
+        tone="tinted"
+        eyebrow="Post a job"
+        title="Tell us about the role"
+        intro="It takes about five minutes. We review every listing and publish it within two working hours."
+      >
+        <div className="mx-auto max-w-3xl">
+          <PostJobForm />
+        </div>
+      </Section>
     </>
   );
 }
